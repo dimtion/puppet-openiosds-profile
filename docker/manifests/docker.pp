@@ -1,5 +1,6 @@
 # Default ipaddress to use
 $ipaddr = '127.0.0.1'
+$allipaddr = '0.0.0.0'
 # Comma separated list of 'tenant:user:passwd:privileges'
 $default_tempauth_users = ['demo:demo:DEMO_PASS:.admin']
 
@@ -70,7 +71,7 @@ openiosds::oioeventagent {'oio-event-agent-0':
 }
 openiosds::oioproxy {'oioproxy-0':
   ns        => 'OPENIO',
-  ipaddress => $ipaddr,
+  ipaddress => $allipaddr,
   no_exec   => true,
 }
 openiosds::redis {'redis-0':
